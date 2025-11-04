@@ -1,5 +1,5 @@
-import logo1 from '@assets/generated_images/Chemistry_association_logo_one_df244e14.png';
-import logo2 from '@assets/generated_images/Chemistry_association_logo_two_d4635447.png';
+import logo1 from '@assets/stock_images/chemistry_associatio_f190f054.jpg';
+import logo2 from '@assets/stock_images/chemistry_associatio_079d02ad.jpg';
 
 export default function AssociationLogos() {
   return (
@@ -20,7 +20,7 @@ export default function AssociationLogos() {
             <img 
               src={logo1} 
               alt="شعار الجمعية الكيميائية العربية" 
-              className="w-32 h-32 md:w-40 md:h-40 object-contain"
+              className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-md"
             />
           </div>
           <div 
@@ -30,7 +30,7 @@ export default function AssociationLogos() {
             <img 
               src={logo2} 
               alt="شعار اتحاد الكيميائيين العرب" 
-              className="w-32 h-32 md:w-40 md:h-40 object-contain"
+              className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-md"
             />
           </div>
         </div>

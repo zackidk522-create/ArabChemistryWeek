@@ -1,4 +1,4 @@
-import heroImage from '@assets/generated_images/Hero_chemistry_background_image_cbc75828.png';
+import heroImage from '@assets/stock_images/chemistry_laboratory_9eb8c8bf.jpg';
 
 export default function HeroSection() {
   return (
