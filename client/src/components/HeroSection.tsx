@@ -1,8 +1,26 @@
 import heroImage from '@assets/stock_images/chemistry_laboratory_9eb8c8bf.jpg';
 import logo1 from '@assets/images_1762267128270.jpg';
 import logo2 from '@assets/ikPpVjO3_400x400_1762267132734.jpg';
+import { useState, useEffect } from 'react';
 
 export default function HeroSection() {
+  const [displayedText, setDisplayedText] = useState('');
+  const fullText = 'الأسبوع العربي للكيمياء';
+  
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setDisplayedText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 150);
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
   return (
     <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
       <div 
@@ -14,10 +32,11 @@ export default function HeroSection() {
       
       <div className="relative z-10 text-center px-6 py-16 max-w-4xl mx-auto">
         <h1 
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-in slide-in-from-bottom-8 duration-700"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 min-h-[4rem] md:min-h-[5rem]"
           data-testid="text-main-title"
         >
-          الأسبوع العربي للكيمياء
+          {displayedText}
+          <span className="animate-pulse">|</span>
         </h1>
         
         <div className="flex flex-col items-center gap-6 mt-8 animate-in slide-in-from-bottom-8 duration-700 delay-300">
@@ -28,7 +47,7 @@ export default function HeroSection() {
               className="w-20 h-20 md:w-24 md:h-24 object-contain bg-white/90 rounded-lg p-2 transition-all duration-300 hover:scale-110 hover:rotate-3 hover:shadow-xl animate-in zoom-in duration-500 delay-500"
             />
             <p 
-              className="text-lg md:text-xl text-white/90 font-light animate-in fade-in duration-700 delay-700"
+              className="text-lg md:text-xl text-white/90 font-light animate-in fade-in duration-700 delay-2500"
               data-testid="text-student-name"
             >
               إعداد الطالب: محمد السيد – شعبة 102
